@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<REMITTable1>
+  <reportingEntiryID>
+    <ace>B0000116N.NO</ace>
+  </reportingEntiryID>
+  <contractList>
+    <contract>
+      <contractId>N2EX_20150611_1200_UK</contractId>
+      <contractName>N2EX_Day_Ahead_UK</contractName>
+      <contractType>AU</contractType>
+      <energyCommodity>EL</energyCommodity>
+      <settlementMethod>P</settlementMethod>
+      <organisedMarketPlaceIdentifier>
+        <mic>N2EX</mic>
+      </organisedMarketPlaceIdentifier>
+      <contractTradingHours>
+        <startTime>00:00:00</startTime>
+      </contractTradingHours>
+      <ensTime>00:00:00</ensTime>
+      <lastTradingDateTime>2015-06-11T12:00:00Z</lastTradingDateTime>
+      <deliveryPointOrZone>10YGB----------A</deliveryPointOrZone>
+      <deliveryStartDate>2015-06-12</deliveryStartDate>
+      <deliveryEndDate>22015-06-12</deliveryEndDate>
+      <duration>H</duration>
+      <loadType>BH</loadType>
+      <deliveryProfile>
+        <loadDelieveryStartTime>00:00:00</loadDelieveryStartTime>
+        <loadDeliveryEndTime>00:00:00</loadDeliveryEndTime>
+      </deliveryProfile>
+    </contract>
+  </contractList>
+</REMITTable1>
