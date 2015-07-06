@@ -26,10 +26,21 @@ namespace MVCHello.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
-        {
-            //return "value";
-            return data[id];
+        //public string Get(int id)
+        //{
+        //    //return "value";
+        //    return data[id];
+        //}
+        public HttpResponseMessage Get(int id)
+        { 
+            if(data.Count > id)
+            {
+                return Request.CreateResponse<string>(HttpStatusCode.OK, data[id]);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Item not found");
+            }
         }
 
         // POST api/values
