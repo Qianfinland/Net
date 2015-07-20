@@ -44,9 +44,17 @@ namespace MVCHello.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        /*public void Post([FromBody]string value)
         {
             data.Add(value);
+        }*/
+
+        public HttpResponseMessage Post ([FromBody] string value)
+        {
+            data.Add(value);
+            var msg = Request.CreateResponse(HttpStatusCode.Created);
+            msg.Headers.Location = new Uri(Request.RequestUri + data.Count.ToString());
+            return msg;
         }
 
         // PUT api/values/5
