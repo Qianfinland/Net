@@ -36,6 +36,10 @@ namespace SeleniumFirst
             //Initial
             SeleniumSetMethods.EnterText(driver, "Initial", "test", "Name");
 
+            //check the get method
+            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText(driver, "TitleId", "Id"));
+
+            Console.WriteLine("The value form my Initial is:" + SeleniumGetMethods.GetText(driver, "Initial", "Name"));
             //Click
             SeleniumSetMethods.Click(driver, "Save", "Name");
             Console.WriteLine("Execute Test:");
