@@ -2,6 +2,14 @@
 
 namespace SeleniumFirst
 {
+    enum PropertyType
+    {
+        Id,
+        Name,
+        LinkText,
+        CssName,
+        ClassName
+    }
     class PropertiesCollection
     {
         //Auto-implemented property

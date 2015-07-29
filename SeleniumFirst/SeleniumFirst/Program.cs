@@ -26,17 +26,17 @@ namespace SeleniumFirst
         {
             //EnterText(element, value, type of control By.)
             //Title
-            SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", "Id");
+            SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", PropertyType.Id);
 
             //Initial
-            SeleniumSetMethods.EnterText( "Initial", "test", "Name");
+            SeleniumSetMethods.EnterText( "Initial", "test", PropertyType.Name);
 
             //check the get method
-            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText("TitleId", "Id")); //2??
-            //Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetTextFromDropDown("TitleId", "Id"));//true
-            Console.WriteLine("The value form my Initial is:" + SeleniumGetMethods.GetText("Initial", "Name"));
+            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id)); //2??
+            //Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetTextFromDropDown("TitleId", PropertyType.Id));//true
+            Console.WriteLine("The value form my Initial is:" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
             //Click
-            SeleniumSetMethods.Click( "Save", "Name");
+            SeleniumSetMethods.Click( "Save", PropertyType.Name);
             Console.WriteLine("Execute Test:");
         }
 
