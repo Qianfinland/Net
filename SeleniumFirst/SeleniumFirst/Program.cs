@@ -2,10 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumFirst
 {
@@ -37,8 +33,8 @@ namespace SeleniumFirst
             SeleniumSetMethods.EnterText(driver, "Initial", "test", "Name");
 
             //check the get method
-            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText(driver, "TitleId", "Id"));
-
+            //Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText(driver, "TitleId", "Id"));
+            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetTextFromDropDown(driver, "TitleId", "Id"));
             Console.WriteLine("The value form my Initial is:" + SeleniumGetMethods.GetText(driver, "Initial", "Name"));
             //Click
             SeleniumSetMethods.Click(driver, "Save", "Name");
