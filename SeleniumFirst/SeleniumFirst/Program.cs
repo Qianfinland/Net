@@ -18,7 +18,7 @@ namespace SeleniumFirst
             //create the reference for our browser
             PropertiesCollection.driver = new ChromeDriver();
             //navigate to Google page
-            PropertiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
+            PropertiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
             Console.WriteLine("Open URL");
         }
 
@@ -26,25 +26,14 @@ namespace SeleniumFirst
         public void ExecuateTest()
         {
 
-            EAPageObject page = new EAPageObject();
-            page.TextInitial.SendKeys("automation test on POM");
-            page.ButtonSave.Click();
+            //login to application
+            LoginPageObject pageLogin = new LoginPageObject();
+            EAPageObject pageEA= pageLogin.Login("bunny","guessmypassword");
 
-
-            //EnterText(element, value, type of control By.)
-            ////Title
-            //SeleniumSetMethods.SelectDropDown("TitleId", "Ms.", PropertyType.Id);
-
-            ////Initial
-            //SeleniumSetMethods.EnterText("Initial", "test", PropertyType.Name);
-
-            ////check the get method
-            //Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id)); //2??
-            ////Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetTextFromDropDown("TitleId", PropertyType.Id));//true
-            //Console.WriteLine("The value form my Initial is:" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
-            ////Click
-            //SeleniumSetMethods.Click("Save", PropertyType.Name);
-            //Console.WriteLine("Execute Test:");
+            pageEA.TextInitial.SendKeys("Test page navigation");
+            pageEA.TextFirstName.SendKeys("Bunny");
+            pageEA.TextMiddleName.SendKeys("Smith");
+            pageEA.ButtonSave.Click();
         }
 
         [TearDown]

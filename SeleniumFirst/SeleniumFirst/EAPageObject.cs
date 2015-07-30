@@ -15,6 +15,13 @@ namespace SeleniumFirst
         [FindsBy(How = How.Name, Using = "Initial")]
         public IWebElement TextInitial { get; set; }
 
+
+        [FindsBy(How = How.Name, Using = "FirstName")]
+        public IWebElement TextFirstName { get; set; }
+
+        [FindsBy(How = How.Name, Using = "MiddleName")]
+        public IWebElement TextMiddleName { get; set; }
+
         [FindsBy(How = How.Name, Using = "Save")]
         public IWebElement ButtonSave { get; set; }
     }
