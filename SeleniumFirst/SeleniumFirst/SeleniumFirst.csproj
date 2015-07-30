@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Excel">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -52,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EAPageObject.cs" />
+    <Compile Include="ExcelLib.cs" />
     <Compile Include="LoginPageObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />
