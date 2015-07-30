@@ -30,10 +30,13 @@ namespace SeleniumFirst
             LoginPageObject pageLogin = new LoginPageObject();
             EAPageObject pageEA= pageLogin.Login("bunny","guessmypassword");
 
-            pageEA.TextInitial.SendKeys("Test page navigation");
-            pageEA.TextFirstName.SendKeys("Bunny");
-            pageEA.TextMiddleName.SendKeys("Smith");
-            pageEA.ButtonSave.Click();
+            //pageEA.TextInitial.SendKeys("Test page navigation");
+            //pageEA.TextFirstName.SendKeys("Bunny");
+            //pageEA.TextMiddleName.SendKeys("Smith");
+            //pageEA.ButtonSave.Click();
+
+            //call the user fill form operation from the EAPageObject 
+            pageEA.UserFormFill("call userFormFill method from EAPageObject", "Bunny", "Smith");
         }
 
         [TearDown]

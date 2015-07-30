@@ -24,5 +24,14 @@ namespace SeleniumFirst
 
         [FindsBy(How = How.Name, Using = "Save")]
         public IWebElement ButtonSave { get; set; }
+
+        //User fill form operation method
+        public void UserFormFill(string initial, string firstname, string middlename)
+        {
+            TextInitial.SendKeys(initial);
+            TextFirstName.SendKeys(firstname);
+            TextMiddleName.SendKeys(middlename);
+            ButtonSave.Click();
+        }
     }
 }
