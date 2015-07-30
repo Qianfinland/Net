@@ -22,11 +22,14 @@ namespace SeleniumFirst
         public EAPageObject Login(string userName, string password) 
         { 
             //username
-            TextUserName.SendKeys(userName);
+            TextUserName.EnterText(userName); //extension method 
+            //TextUserName.SendKeys(userName);
             //password
-            TextPassword.SendKeys(password);
+            TextPassword.EnterText(password); //extension method
+            //TextPassword.SendKeys(password);
             //click the login button
-            ButtonLogin.Submit();
+            ButtonLogin.ClickExtension(); //extension method
+            //ButtonLogin.Submit();
 
             //return the page object
             return new EAPageObject();

@@ -28,11 +28,19 @@ namespace SeleniumFirst
         //User fill form operation method
         public void UserFormFill(string initial, string firstname, string middlename)
         {
-            SeleniumSetMethods.EnterText(TextInitial, initial);
-            SeleniumSetMethods.EnterText(TextFirstName, firstname);
-            SeleniumSetMethods.EnterText(TextMiddleName, middlename);
-            SeleniumSetMethods.Click(ButtonSave);
+            //use of extension
+            TextInitial.EnterText(initial);
+            TextFirstName.EnterText(firstname);
+            TextMiddleName.EnterText(middlename);
+            ButtonSave.ClickExtension();
 
+            //SeleniumSetMethods.EnterText(TextInitial, initial);
+            //SeleniumSetMethods.EnterText(TextFirstName, firstname);
+            //SeleniumSetMethods.EnterText(TextMiddleName, middlename);
+            //SeleniumSetMethods.Click(ButtonSave);
+
+
+            
             //TextInitial.SendKeys(initial);
             //TextFirstName.SendKeys(firstname);
             //TextMiddleName.SendKeys(middlename);
