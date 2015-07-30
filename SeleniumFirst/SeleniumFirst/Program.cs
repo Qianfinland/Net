@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using System;
+using OpenQA.Selenium;
 
 namespace SeleniumFirst
 {
@@ -24,20 +25,26 @@ namespace SeleniumFirst
         [Test]
         public void ExecuateTest()
         {
+
+            EAPageObject page = new EAPageObject();
+            page.TextInitial.SendKeys("automation test on POM");
+            page.ButtonSave.Click();
+
+
             //EnterText(element, value, type of control By.)
-            //Title
-            SeleniumSetMethods.SelectDropDown( "TitleId", "Ms.", PropertyType.Id);
+            ////Title
+            //SeleniumSetMethods.SelectDropDown("TitleId", "Ms.", PropertyType.Id);
 
-            //Initial
-            SeleniumSetMethods.EnterText( "Initial", "test", PropertyType.Name);
+            ////Initial
+            //SeleniumSetMethods.EnterText("Initial", "test", PropertyType.Name);
 
-            //check the get method
-            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id)); //2??
-            //Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetTextFromDropDown("TitleId", PropertyType.Id));//true
-            Console.WriteLine("The value form my Initial is:" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
-            //Click
-            SeleniumSetMethods.Click( "Save", PropertyType.Name);
-            Console.WriteLine("Execute Test:");
+            ////check the get method
+            //Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id)); //2??
+            ////Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetTextFromDropDown("TitleId", PropertyType.Id));//true
+            //Console.WriteLine("The value form my Initial is:" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
+            ////Click
+            //SeleniumSetMethods.Click("Save", PropertyType.Name);
+            //Console.WriteLine("Execute Test:");
         }
 
         [TearDown]
