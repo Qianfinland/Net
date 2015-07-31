@@ -18,31 +18,30 @@ namespace PratractorTest
 
         const string url = "http://juliemr.github.io/protractor-demo/";
         IWebDriver driver;
-        NgWebDriver ngDriver;
+        CalculatorPage page;
         [SetUp]
         public void Setup()
         {
             driver = new ChromeDriver();
             driver.Manage().Timeouts().SetScriptTimeout(TimeSpan.FromSeconds(10));
-            ngDriver = new NgWebDriver(driver);
+            page = new CalculatorPage(driver, url);
         }
 
         [TearDown]
         public void TearDown()
         {
-            ngDriver.Quit();
+            driver.Quit();
         }
 
         [Test]
-        public void AddFourAndSix_ShouldBeTen()
+        public void AddTwoNumbers()
         {
-            //navigate to the url
-            ngDriver.Url = url;
-            ngDriver.FindElement(NgBy.Input("first")).SendKeys("1");
-            ngDriver.FindElement(NgBy.Input("second")).SendKeys("2");
-            ngDriver.FindElement(By.Id("gobutton")).Click(); // cannot use submit??? 
-            var latestSum = ngDriver.FindElement(NgBy.Binding("latest")).Text;
-            Assert.That(Int32.Parse(latestSum), Is.EqualTo(3));
+            //call the add method 
+             string result = page.Add("5", "6");
+             Assert.That(result, Is.EqualTo("11"));
+
+             string result1 = page.Add("1", "6");
+             Assert.That(result1, Is.EqualTo("7"));
         }
     }
 }
