@@ -33,11 +33,16 @@ namespace PratractorTest
         {
             return _ngDriver.FindElement(NgBy.Binding("latest")).Text; 
         }
+
+        private void SetOperator(string opera)
+        {
+            var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
+            operatorSelect.SelectByText(opera);
+        }
         public string Add(string first, string second)
         {
             DoMath(first, second);
-            var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
-            operatorSelect.SelectByText("+");
+            SetOperator("+");
             Click();
             return ReturnResult();
         }
@@ -45,8 +50,9 @@ namespace PratractorTest
         public string Substract(string first, string second)
         {
             DoMath(first, second);
-            var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
-            operatorSelect.SelectByText("-");
+            //var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
+            //operatorSelect.SelectByText("-");
+            SetOperator("-");
             Click();
             return ReturnResult();
         }
