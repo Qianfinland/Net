@@ -28,14 +28,18 @@ namespace PratractorTest
         {
             _ngDriver.FindElement(By.Id("gobutton")).Click();
         }
+
+        public string ReturnResult()
+        {
+            return _ngDriver.FindElement(NgBy.Binding("latest")).Text; 
+        }
         public string Add(string first, string second)
         {
             DoMath(first, second);
             var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
             operatorSelect.SelectByText("+");
             Click();
-            var latestResult = _ngDriver.FindElement(NgBy.Binding("latest")).Text;
-            return latestResult;
+            return ReturnResult();
         }
 
         public string Substract(string first, string second)
@@ -44,8 +48,7 @@ namespace PratractorTest
             var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
             operatorSelect.SelectByText("-");
             Click();
-            var latestResult = _ngDriver.FindElement(NgBy.Binding("latest")).Text;
-            return latestResult;
+            return ReturnResult();
         }
 
     }
