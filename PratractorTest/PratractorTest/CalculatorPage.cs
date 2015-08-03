@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using Protractor;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,23 @@ namespace PratractorTest
         {
             _ngDriver.FindElement(NgBy.Input("first")).SendKeys(first);
             _ngDriver.FindElement(NgBy.Input("second")).SendKeys(second);
+            var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
+            operatorSelect.SelectByText("+");
             _ngDriver.FindElement(By.Id("gobutton")).Click();
-            var latestSum = _ngDriver.FindElement(NgBy.Binding("latest")).Text;
-            return latestSum;
+            var latestResult = _ngDriver.FindElement(NgBy.Binding("latest")).Text;
+            return latestResult;
         }
+
+        public string Substract(string first, string second)
+        {
+            _ngDriver.FindElement(NgBy.Input("first")).SendKeys(first);
+            _ngDriver.FindElement(NgBy.Input("second")).SendKeys(second);
+            var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
+            operatorSelect.SelectByText("-");
+            _ngDriver.FindElement(By.Id("gobutton")).Click();
+            var latestResult = _ngDriver.FindElement(NgBy.Binding("latest")).Text;
+            return latestResult;
+        }
+
     }
 }

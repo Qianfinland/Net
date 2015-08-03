@@ -43,5 +43,16 @@ namespace PratractorTest
              string result1 = page.Add("1", "6");
              Assert.That(result1, Is.EqualTo("7"));
         }
+
+        [Test]
+        public void SubstractTwoNumbers()
+        {
+            //call the substract method 
+            string result = page.Substract("9", "8");
+            Assert.That(result, Is.EqualTo("1"));
+
+            string result1 = page.Substract("10", "5");
+            Assert.That(result1, Is.EqualTo("5"));
+        }
     }
 }
