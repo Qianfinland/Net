@@ -23,6 +23,7 @@ namespace PratractorTest
            _ngDriver.FindElement(NgBy.Input("first")).SendKeys(first);
            _ngDriver.FindElement(NgBy.Input("second")).SendKeys(second);
            SetOperator(opera);
+           Click();
         }
 
         private void Click()
@@ -44,35 +45,31 @@ namespace PratractorTest
         {
             DoMath(first, second, "+");
             //SetOperator("+");
-            Click();
+            //Click();
             return ReturnResult();
         }
 
         public string Substract(string first, string second)
         {
             DoMath(first, second, "-");
-            Click();
             return ReturnResult();
         }
 
         public string Multiply(string first, string second)
         {
             DoMath(first, second, "*");
-            Click();
             return ReturnResult();
         }
 
         public string Divide(string first, string second)
         {
             DoMath(first, second, "/");
-            Click();
             return ReturnResult();
         }
 
         public string Module(string first, string second)
         {
             DoMath(first, second, "%");
-            Click();
             return ReturnResult();
         }
 
