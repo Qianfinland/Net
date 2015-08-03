@@ -57,5 +57,29 @@ namespace PratractorTest
             return ReturnResult();
         }
 
+        public string Multiply(string first, string second)
+        {
+            DoMath(first, second);
+            SetOperator("*");
+            Click();
+            return ReturnResult();
+        }
+
+        public string Divide(string first, string second)
+        {
+            DoMath(first, second);
+            SetOperator("/");
+            Click();
+            return ReturnResult();
+        }
+
+        public string Module(string first, string second)
+        {
+            DoMath(first, second);
+            SetOperator("%");
+            Click();
+            return ReturnResult();
+        }
+
     }
 }

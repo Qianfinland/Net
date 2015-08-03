@@ -54,5 +54,27 @@ namespace PratractorTest
             string result1 = page.Substract("10", "5");
             Assert.That(result1, Is.EqualTo("5"));
         }
+
+        [Test]
+        public void MultiplyTwoNumbers()
+        {
+            //call the multiply method 
+            string result = page.Multiply("2", "10");
+            Assert.That(result, Is.EqualTo("20"));
+        }
+
+        [Test]
+        public void DivideTwoNumbers()
+        {
+            string result = page.Divide("10", "2");
+            Assert.That(result, Is.EqualTo("5"));
+        }
+
+        [Test]
+        public void ModuleTwoNumbers()
+        {
+            string result = page.Module("9", "3");
+            Assert.That(result, Is.EqualTo("0"));
+        }
     }
 }
