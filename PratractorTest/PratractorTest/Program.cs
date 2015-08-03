@@ -37,41 +37,40 @@ namespace PratractorTest
         public void AddTwoNumbers()
         {
             //call the add method 
-             string result = page.Add("5", "6");
-             Assert.That(result, Is.EqualTo("11"));
+             page.Add("5", "6");
+             Assert.That(page.ReturnResult(), Is.EqualTo("11"));
         }
 
         [Test]
         public void SubstractTwoNumbers()
         {
             //call the substract method 
-            string result = page.Substract("9", "8");
-            Assert.That(result, Is.EqualTo("1"));
+            page.Substract("9", "8");
+            Assert.That(page.ReturnResult(), Is.EqualTo("1"));
 
-            string result1 = page.Substract("10", "5");
-            Assert.That(result1, Is.EqualTo("5"));
+            page.Substract("10", "5");
+            Assert.That(page.ReturnResult(), Is.EqualTo("5"));
         }
 
         [Test]
         public void MultiplyTwoNumbers()
         {
-            //call the multiply method 
-            string result = page.Multiply("2", "10");
-            Assert.That(result, Is.EqualTo("20"));
+            page.Multiply("10", "2");
+            Assert.That(page.ReturnResult(), Is.EqualTo("20"));
         }
 
         [Test]
         public void DivideTwoNumbers()
         {
-            string result = page.Divide("10", "2");
-            Assert.That(result, Is.EqualTo("5"));
+            page.Divide("10", "2");
+            Assert.That(page.ReturnResult(), Is.EqualTo("5"));
         }
 
         [Test]
         public void ModuleTwoNumbers()
         {
-            string result = page.Module("9", "3");
-            Assert.That(result, Is.EqualTo("0"));
+            page.Module("9", "3");
+            Assert.That(page.ReturnResult(), Is.EqualTo("0"));
         }
     }
 }

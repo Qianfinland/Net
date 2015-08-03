@@ -41,36 +41,30 @@ namespace PratractorTest
             var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
             operatorSelect.SelectByText(opera);
         }
-        public string Add(string first, string second)
+        public void Add(string first, string second)
         {
             DoMath(first, second, "+");
-            //SetOperator("+");
-            //Click();
-            return ReturnResult();
+            //return ReturnResult();
         }
 
-        public string Substract(string first, string second)
+        public void Substract(string first, string second)
         {
             DoMath(first, second, "-");
-            return ReturnResult();
         }
 
-        public string Multiply(string first, string second)
+        public void Multiply(string first, string second)
         {
             DoMath(first, second, "*");
-            return ReturnResult();
         }
 
-        public string Divide(string first, string second)
+        public void Divide(string first, string second)
         {
             DoMath(first, second, "/");
-            return ReturnResult();
         }
 
-        public string Module(string first, string second)
+        public void Module(string first, string second)
         {
             DoMath(first, second, "%");
-            return ReturnResult();
         }
 
     }
