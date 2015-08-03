@@ -18,11 +18,15 @@ namespace PratractorTest
             _ngDriver = new NgWebDriver(driver);
             _ngDriver.Url = url;
         }
+        private void DoMath(string first, string second)
+        {
+           _ngDriver.FindElement(NgBy.Input("first")).SendKeys(first);
+           _ngDriver.FindElement(NgBy.Input("second")).SendKeys(second);
+        }
 
         public string Add(string first, string second)
         {
-            _ngDriver.FindElement(NgBy.Input("first")).SendKeys(first);
-            _ngDriver.FindElement(NgBy.Input("second")).SendKeys(second);
+            DoMath(first, second);
             var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
             operatorSelect.SelectByText("+");
             _ngDriver.FindElement(By.Id("gobutton")).Click();
@@ -32,8 +36,7 @@ namespace PratractorTest
 
         public string Substract(string first, string second)
         {
-            _ngDriver.FindElement(NgBy.Input("first")).SendKeys(first);
-            _ngDriver.FindElement(NgBy.Input("second")).SendKeys(second);
+            DoMath(first, second);
             var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
             operatorSelect.SelectByText("-");
             _ngDriver.FindElement(By.Id("gobutton")).Click();
