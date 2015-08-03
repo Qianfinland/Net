@@ -18,10 +18,11 @@ namespace PratractorTest
             _ngDriver = new NgWebDriver(driver);
             _ngDriver.Url = url;
         }
-        private void DoMath(string first, string second)
+        private void DoMath(string first, string second, string opera)
         {
            _ngDriver.FindElement(NgBy.Input("first")).SendKeys(first);
            _ngDriver.FindElement(NgBy.Input("second")).SendKeys(second);
+           SetOperator(opera);
         }
 
         private void Click()
@@ -41,42 +42,36 @@ namespace PratractorTest
         }
         public string Add(string first, string second)
         {
-            DoMath(first, second);
-            SetOperator("+");
+            DoMath(first, second, "+");
+            //SetOperator("+");
             Click();
             return ReturnResult();
         }
 
         public string Substract(string first, string second)
         {
-            DoMath(first, second);
-            //var operatorSelect = new SelectElement(_ngDriver.FindElement(NgBy.Select("operator")));
-            //operatorSelect.SelectByText("-");
-            SetOperator("-");
+            DoMath(first, second, "-");
             Click();
             return ReturnResult();
         }
 
         public string Multiply(string first, string second)
         {
-            DoMath(first, second);
-            SetOperator("*");
+            DoMath(first, second, "*");
             Click();
             return ReturnResult();
         }
 
         public string Divide(string first, string second)
         {
-            DoMath(first, second);
-            SetOperator("/");
+            DoMath(first, second, "/");
             Click();
             return ReturnResult();
         }
 
         public string Module(string first, string second)
         {
-            DoMath(first, second);
-            SetOperator("%");
+            DoMath(first, second, "%");
             Click();
             return ReturnResult();
         }

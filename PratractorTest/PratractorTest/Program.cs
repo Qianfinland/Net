@@ -39,9 +39,6 @@ namespace PratractorTest
             //call the add method 
              string result = page.Add("5", "6");
              Assert.That(result, Is.EqualTo("11"));
-
-             string result1 = page.Add("1", "6");
-             Assert.That(result1, Is.EqualTo("7"));
         }
 
         [Test]
