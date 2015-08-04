@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverDemo", "WebDriverDemo\WebDriverDemo.csproj", "{C6F7E3B0-AB07-4079-9A37-F6B161B965D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6B822F3E-3591-43E0-84A2-11E6042ADA38}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6F7E3B0-AB07-4079-9A37-F6B161B965D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F7E3B0-AB07-4079-9A37-F6B161B965D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F7E3B0-AB07-4079-9A37-F6B161B965D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F7E3B0-AB07-4079-9A37-F6B161B965D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
