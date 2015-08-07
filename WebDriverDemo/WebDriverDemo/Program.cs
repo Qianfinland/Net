@@ -28,10 +28,10 @@ namespace WebDriverDemo
             //driver.Navigate().GoToUrl("http://www.google.com");//same as above 
             var searchBox = driver.FindElement(By.Id("lst-ib"));
             searchBox.SendKeys("Pluralsight");
-
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
-            //index of index out of range 
-            var imagelink = driver.FindElement(By.ClassName("a.q.qs"));
+            searchBox.SendKeys(Keys.Enter); // Use the enter key 
+            
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10)); // wait page to load fully and solve error on no such element 
+            var imagelink = driver.FindElement(By.LinkText("Kuvahaku"));
             imagelink.Click();
         }
 

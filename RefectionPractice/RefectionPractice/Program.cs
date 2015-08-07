@@ -14,6 +14,13 @@ namespace RefectionPractice
         private static int m = 10, n = 30;
         static void Main(string[] args)
         {
+
+            //DynamicTest();
+            //Test();
+        }
+
+        static void DynamicTest()
+        {
             List<dynamic> list = new List<dynamic>();
             dynamic
                 t1 = new ExpandoObject(),
@@ -60,9 +67,7 @@ namespace RefectionPractice
             });
 
             Console.ReadLine();
-            //Test();
         }
-
         static void Test()
         {
             Console.WriteLine("m+n=" + (m + n));
