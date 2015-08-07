@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
@@ -22,6 +23,10 @@ namespace WebDriverDemo
             //IWebDriver driver1 = new InternetExplorerDriver(@"C:\Users\Qian.Zhou\Documents\");
             //driver1.Url = "www.facebook.com";
 
+        }
+        [Test]
+        public void ImageSearchTest()
+        {
             //case for Chrome
             IWebDriver driver = new ChromeDriver(@"C:\Users\Qian.Zhou\Documents\");
             driver.Url = "http://www.google.com";
@@ -29,10 +34,19 @@ namespace WebDriverDemo
             var searchBox = driver.FindElement(By.Id("lst-ib"));
             searchBox.SendKeys("Pluralsight");
             searchBox.SendKeys(Keys.Enter); // Use the enter key 
-            
+
+
+            //clcik the image
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10)); // wait page to load fully and solve error on no such element 
             var imagelink = driver.FindElement(By.LinkText("Kuvahaku"));
             imagelink.Click();
+
+            //search a specific image, for example the 4th one  
+            var imagelistId = driver.FindElement(By.Id("rg_s"));
+            var fouthdivclass = imagelistId.FindElements(By.CssSelector("[class='rg_di rg_el ivg-i']"))[3];
+            fouthdivclass.Click();
+            var ImageLink = driver.FindElement(By.LinkText("Näytä kuva"));
+            ImageLink.Click();
         }
 
     }
