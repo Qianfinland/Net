@@ -51,7 +51,7 @@ namespace WebDriverDemo
         }
 
         [Test]
-        public void RadioButtonTest()
+        public void DifferentElementsTest()
         {
             driver.Url = @"file:///C:/Users/Qian.Zhou/Documents/Visual%20Studio%202013/Projects/c%23/WebDriverDemo/TestPage.html";
             
@@ -77,6 +77,17 @@ namespace WebDriverDemo
             //method 2 use SelectElement to select the 2nd 
             var selectElement = new SelectElement(select);
             selectElement.SelectByText("Robert");
+
+            //tables
+            ////method 1 to find the 2nd row :table tag -> 2nd table tag -> td
+            //var firsttable = driver.FindElement(By.TagName("table"));
+            //var secondtable = firsttable.FindElement(By.TagName("table"));
+            //var row2 = secondtable.FindElements(By.TagName("td"))[1];
+            //Assert.That(row2.Text, Is.EqualTo("Table row 2"));
+
+            //method 2 to find the 2nd row with Xpath: table/tr/td[1]/table/tr[1]/td
+            var row2 = driver.FindElement(By.XPath("/html/body/table/tbody/tr/td[2]/table/tbody/tr[2]/td"));
+            Assert.That(row2.Text, Is.EqualTo("Table row 2"));
         }
 
         
