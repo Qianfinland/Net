@@ -38,13 +38,23 @@ namespace WebDriverDemo
 
 
             //clcik the image
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10)); // wait page to load fully and solve error on no such element 
+            /*driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10)); // wait page to load fully and solve error on no such element 
             //method 1 to find the image text 
             //var imagetext = driver.FindElement(By.LinkText("Kuvahaku"));
 
             //method 2 to find the image text
             var imagetext = driver.FindElement(By.Id("hdtb-msb")).FindElements(By.CssSelector("[class='hdtb-mitem hdtb-imb'"))[0].FindElement(By.TagName("a"));
- 
+            */
+
+            //second method to wait elements to load 
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            var imagetext = wait.Until(d =>
+                {
+                    var elements = driver.FindElement(By.Id("hdtb-msb")).FindElements(By.CssSelector("[class='hdtb-mitem hdtb-imb'"));
+                    if (elements.Count() > 0)
+                        return elements[0].FindElement(By.TagName("a"));
+                    return null;
+                });
             Assert.That(imagetext.Text, Is.EqualTo("Kuvahaku"));
             imagetext.Click();
 
