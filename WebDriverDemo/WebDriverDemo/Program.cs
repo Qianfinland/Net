@@ -13,6 +13,7 @@ namespace WebDriverDemo
 {
     class Program
     {
+        IWebDriver driver = new ChromeDriver(@"C:\Users\Qian.Zhou\Documents\");
         static void Main(string[] args)
         {
             //case of Firefox
@@ -22,13 +23,12 @@ namespace WebDriverDemo
             ////case of IE
             //IWebDriver driver1 = new InternetExplorerDriver(@"C:\Users\Qian.Zhou\Documents\");
             //driver1.Url = "www.facebook.com";
-
+            //case for Chrome
         }
         [Test]
         public void ImageSearchTest()
         {
-            //case for Chrome
-            IWebDriver driver = new ChromeDriver(@"C:\Users\Qian.Zhou\Documents\");
+            
             driver.Url = "http://www.google.com";
             //driver.Navigate().GoToUrl("http://www.google.com");//same as above 
             var searchBox = driver.FindElement(By.Id("lst-ib"));
@@ -47,6 +47,14 @@ namespace WebDriverDemo
             fouthdivclass.Click();
             var ImageLink = driver.FindElement(By.LinkText("Näytä kuva"));
             ImageLink.Click();
+        }
+
+        [Test]
+        public void RadioButtonTest()
+        {
+            driver.Url = @"file:///C:/Users/Qian.Zhou/Documents/Visual%20Studio%202013/Projects/c%23/WebDriverDemo/TestPage.html";
+            var radioButton = driver.FindElements(By.Name("color"))[0];
+            radioButton.Click();
         }
 
     }
