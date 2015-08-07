@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,9 +54,32 @@ namespace WebDriverDemo
         public void RadioButtonTest()
         {
             driver.Url = @"file:///C:/Users/Qian.Zhou/Documents/Visual%20Studio%202013/Projects/c%23/WebDriverDemo/TestPage.html";
-            var radioButton = driver.FindElements(By.Name("color"))[0];
-            radioButton.Click();
+            
+            //radiobutton
+            var radioButtons = driver.FindElements(By.Name("color"));
+            foreach(var radiobutton in radioButtons)
+            {
+                Console.WriteLine(radiobutton.GetAttribute("value"));
+            }
+
+            //checkbox
+            var checkBox = driver.FindElement(By.Id("check1"));
+            checkBox.Click();
+            //checkBox.Click(); //uncheck
+
+            //select items
+            var select = driver.FindElement(By.Id("select1"));
+
+            ////method 1 to select the 3rd element
+            //var tom = select.FindElements(By.TagName("option"))[2];
+            //tom.Click();
+
+            //method 2 use SelectElement to select the 2nd 
+            var selectElement = new SelectElement(select);
+            selectElement.SelectByText("Robert");
         }
+
+        
 
     }
 }
