@@ -39,8 +39,14 @@ namespace WebDriverDemo
 
             //clcik the image
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10)); // wait page to load fully and solve error on no such element 
-            var imagelink = driver.FindElement(By.LinkText("Kuvahaku"));
-            imagelink.Click();
+            //method 1 to find the image text 
+            //var imagetext = driver.FindElement(By.LinkText("Kuvahaku"));
+
+            //method 2 to find the image text
+            var imagetext = driver.FindElement(By.Id("hdtb-msb")).FindElements(By.CssSelector("[class='hdtb-mitem hdtb-imb'"))[0].FindElement(By.TagName("a"));
+ 
+            Assert.That(imagetext.Text, Is.EqualTo("Kuvahaku"));
+            imagetext.Click();
 
             //search a specific image, for example the 4th one  
             var imagelistId = driver.FindElement(By.Id("rg_s"));
