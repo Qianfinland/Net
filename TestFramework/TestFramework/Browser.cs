@@ -25,5 +25,10 @@ namespace TestFramework
         {
             webDriver.Close();
         }
+
+        public static ISearchContext Driver 
+        { 
+            get {return webDriver;} 
+        }
     }
 }
