@@ -8,22 +8,30 @@ namespace TestFramework
 {
     public static class Pages
     {
-        public static class HomePage
+        public static HomePage HomePage
         {
-            static string Url = "http://pluralsight.com";
-            private static string PageTitle = "Pluralsight – Developer, IT & Creative Training by Pros";
-            public static  void Goto ()
-            {
-                Browser.Goto(Url); 
-            }
-
- 
-            public static bool IsAt()
-            {
-                return Browser.Title == PageTitle;
+            get 
+            { var homePage = new HomePage();
+            return homePage;
             }
         }
 
         
+    }
+
+    public class HomePage
+    {
+        static string Url = "http://pluralsight.com";
+        private static string PageTitle = "Pluralsight – Developer, IT & Creative Training by Pros";
+        public void Goto()
+        {
+            Browser.Goto(Url);
+        }
+
+
+        public  bool IsAt()
+        {
+            return Browser.Title == PageTitle;
+        }
     }
 }
